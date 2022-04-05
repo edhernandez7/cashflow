@@ -4,7 +4,12 @@
       <Header></Header>
     </template>
     <template #resume>
-      <Resume />
+      <Resume
+        :total-label="'Ahorro total'"
+        :label="label"
+        :total-amount="1000000"
+        :amount="amount"
+      />
     </template>
     <template #movements>
       <Movements />
@@ -13,10 +18,10 @@
 </template>
 
 <script>
-import Layout from '@/components/Layout.vue';
-import Header from '@/components/Header.vue';
-import Resume from '@/components/Resume/Index.vue';
-import Movements from '@/components/Movements/Index.vue';
+import Layout from "@/components/Layout.vue";
+import Header from "@/components/Header.vue";
+import Resume from "@/components/Resume/Index.vue";
+import Movements from "@/components/Movements.vue";
 
 export default {
   name: "HomeApp",
@@ -25,6 +30,12 @@ export default {
     Header,
     Resume,
     Movements,
+  },
+  data() {
+    return {
+      label: null,
+      amount: null,
+    };
   },
 };
 </script>

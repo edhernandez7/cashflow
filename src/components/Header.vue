@@ -1,14 +1,8 @@
 <template>
   <header>
-    <img
-      @click="reload"
-      src="@/assets/cashflow-icon.svg"
-      alt="cashflow icon"
-    />
+    <img @click="reload" src="@/assets/cashflow-icon.svg" alt="cashflow icon" />
     <h1>
-      <span>
-        Cash
-      </span>
+      <span> Cash </span>
       flow
     </h1>
     <span></span>
