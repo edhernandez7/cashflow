@@ -10,8 +10,12 @@
         :total-amount="1000000"
         :amount="amount"
       >
-        <template #graphic> graphic </template>
-        <template #action> action </template>
+        <template #graphic>
+          <Graphic :amounts="amounts" />
+        </template>
+        <template #action>
+          <Action />
+        </template>
       </Resume>
     </template>
     <template #movements>
@@ -24,7 +28,9 @@
 import Layout from "@/components/Layout.vue";
 import Header from "@/components/Header.vue";
 import Resume from "@/components/Resume/Index.vue";
+import Action from "./Action.vue";
 import Movements from "@/components/Movements/Index.vue";
+import Graphic from "@/components/Resume/Graphic.vue";
 
 export default {
   name: "HomeApp",
@@ -32,12 +38,15 @@ export default {
     Layout,
     Header,
     Resume,
+    Action,
     Movements,
+    Graphic,
   },
   data() {
     return {
       label: null,
       amount: null,
+      amounts: [100, 200, 500, 200, -400, -600, -300, 0, 300, 500],
       movements: [
         {
           id: 0,
